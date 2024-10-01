@@ -42,7 +42,7 @@ if 'credentials' not in st.session_state:
 
 # Set up the OAuth flow
 def create_flow():
-    flow = Flow.from_client_secrets_file(CLIENT_SECRETS_FILE, scopes=SCOPES, redirect_uri='http://localhost:8501/')
+    flow = Flow.from_client_config(CLIENT_SECRETS_FILE, scopes=SCOPES, redirect_uri='http://localhost:8501/')
     return flow
 
 # Check if user is logged in
