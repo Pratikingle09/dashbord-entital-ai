@@ -156,8 +156,8 @@ if is_logged_in():
                             hours = int(abs(time_difference))
                             minutes = int((abs(time_difference) - hours) * 60)
 
-                            time_status = "**On Time**" if velocity == 0 else \
-                                        "**Yet To Start**" if total_actual or total_estimate == 0 else \
+                            time_status = "**On Time**" if velocity == 0 and total_actual !=0 else \
+                                        "**Yet To Start**" if total_actual == 0 or total_estimate == 0 else \
                                         f"**Behind Schedule** by {hours}h {minutes}m" if velocity > 0 else \
                                         f"**Ahead of Time** by {hours}h {minutes}m"
 
