@@ -15,8 +15,25 @@ st.title("Welcome to Data Visualization Dashboard with OAuth")
 def calculate_velocity(total_actual, total_estimate):
     return total_actual / total_estimate if total_estimate != 0 else 0
 
+
+
+client_id=st.secrets["google"]["client_id"]
+client_secret=st.secrets["google"]["client_secret"]
+redirect_uris=st.secrets["google"]["redirect_uris"][0]
+
 # OAuth credentials setup
-CLIENT_SECRETS_FILE = "credentials.json"  # Make sure to update the path as needed
+CLIENT_SECRETS_FILE = {
+  "web": {
+    "client_id": client_id,
+    "project_id": "data-visualization-436504",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_secret": client_secret,
+    "redirect_uris": redirect_uris
+  }
+}
+                      #"credentials.json"  
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 
 # Initialize session state for credentials
