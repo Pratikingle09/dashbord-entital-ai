@@ -30,7 +30,7 @@ CLIENT_SECRETS_FILE = {
     "token_uri": "https://oauth2.googleapis.com/token",
     "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
     "client_secret": client_secret,
-    "redirect_uris": redirect_uris
+    "redirect_uris": "https://dashbord-entital-ai-gkonvgmz8awfczcsdnyi8n.streamlit.app/"
   }
 }
                       #"credentials.json"  
@@ -42,7 +42,7 @@ if 'credentials' not in st.session_state:
 
 # Set up the OAuth flow
 def create_flow():
-    flow = Flow.from_client_config(CLIENT_SECRETS_FILE, scopes=SCOPES, redirect_uri='http://localhost:8501/')
+    flow = Flow.from_client_config(CLIENT_SECRETS_FILE, scopes=SCOPES, redirect_uri='https://dashbord-entital-ai-gkonvgmz8awfczcsdnyi8n.streamlit.app/')
     return flow
 
 # Check if user is logged in
